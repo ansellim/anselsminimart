@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="manifest" href="manifest.json" crossorigin="use-credentials"> -->
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+
+    <meta name="theme-color" content="#f69435" />
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(function (registration) {
+                    console.log('Registration successful, scope is:', registration.scope);
+                })
+                .catch(function (error) {
+                    console.log('Service worker registration failed, error:', error);
+                });
+        }
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Ansel's Minimart</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="products.html">Browse Products</a></li>
+                <li><a href="shoppinglist.html">Create Shopping List</a></li>
+                <li><a href="directions.html">How To Get Here</a></li>
+                <li><a href="feedback_form.html">Feedback Form</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-center">
+            <h1>
+                <span class="text-primary">Welcome to Ansel's minimart</span>
+                <br>
+                <small>bringing the conveniences of grocery shopping to <mark>all polytechnic students</mark></small>
+            </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center">
+            <h2>We are the absolute best!</h2>
+            <p>Ansel's Minimart is obviously the best minimart in Singapore. We have an <kbd>extremely</kbd> extensive
+                range of
+                items that you can choose from.</p>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="text-center">
+            <ul>
+                <li><a href="products.html">Product Listings</a></li>
+                <li><a href="map.html">Where Are We?</a></li>
+                <li><a href="notes.html">Take Notes</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <h2>Feedback form</h2>
+                </div>
+                <p>All customers of Ansel's Minimart are welcome to provide feedback about our services via our online
+                    feedback form.</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <h2>Why provide feedback?</h2>
+                </div>
+                <p>Believe it or not, your feedback matters to us. We want to know your feedback because we strive to
+                    continually improve on our services. We aim to be the most customer-friendly minimart in
+                    polytechnics across the city.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row text-center">
+            <h1>Feedback Form</h1>
+        </div>
+
+        <div class="row text-center">
+            <form action="thankyou.html" class="feedbackForm">
+                <fieldset>Basic information about yourself <br><br>
+                    <label for="name">Your name:</label><br>
+                    <input type="text" id="name"><br>
+                    <label for="phonenumber">Your phone number:</label><br>
+                    <input type="tel" id="phonenumber"><br>
+                </fieldset>
+                <br>
+                <fieldset>Would you come back again?</fieldset><br>
+                <label for="comebackagain_yes">Yes</label>
+                <input type="radio" name="comebackagain" id="comebackagain_yes" value="yes">
+                <label for="comebackagain_no">No</label>
+
+                <input type="radio" name="comebackagain" id="comebackagain_no" value="no"><br>
+                <fieldset>Do you have any general comments for Ansel?</fieldset><br>
+                <label for="generalcomments"></label>
+                <textarea name="generalcomments" id="generalcomments" cols="30" rows="10"></textarea><br>
+                <button id="feedbackFormSubmitButton">Submit Form</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="container" id="feedback">
+        <h2>Feedback</h2>
+        <form>
+            <fieldset class="form-group">
+                <legend>Personal Info</legend>
+                <div>
+                    <label for="name">name</label>
+                    <input class="form-control" type="text" id="name" placeholder="Your Name">
+                </div>
+
+                <div>
+                    <label for="email">Email address</label>
+                    <input class="form-control" type="email" id="remail" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small class="form-text text-muted" id="emailHelp">We'll never share your email</small>
+                </div>
+
+            </fieldset>
+            <fieldset class="form-group">
+
+                <legend>Service Feedback</legend>
+                <div>
+                    <label for="servicetype">Service type</label>
+                    <select class="form-control" id="servicetype">
+                        <option>Choose</option>
+                        <option value="cat">Foot Reflexology</option>
+                        <option value="cat">Body Scrub</option>
+                        <option value="bird">Body Therapy</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">Feedback</label>
+                    <textarea class="form-control" id="feedback" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>How do you rate us?</label>
+                    <div class="form-check form-check-inline"><label class="form-check-label"><input type="radio"
+                                name="rate" value="yes" checked> Good</label></div>
+                    <div class="form-check form-check-inline"><label class="form-check-label"><input type="radio"
+                                name="ratet" value="no"> Bad</label></div>
+                </div>
+
+                <div class="form-group">
+                    <label>How did you hear about us?</label>
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input"
+                                type="checkbox">
+                            Internet</label></div>
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input"
+                                type="checkbox">
+                            Printed Media</label></div>
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input"
+                                type="checkbox">
+                            Word of Mouth</label></div>
+                </div>
+
+            </fieldset>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer class="bg-light text-center text-lg-start">
+        <br>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-dark" href="http://ansellim.github.io">Ansel Lim</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</body>
+
+</html>

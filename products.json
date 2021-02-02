@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ansel's House Brand Olive Oil 2 liters",
+    "price": "$18.40",
+    "photo": "https://ansellim.github.io/minimart/oliveoil.jpg"
+  },
+  {
+    "name": "SongHe AAA Thai Rice 5kg",
+    "price": "$14.60",
+    "photo": "https://ansellim.github.io/minimart/thairice.jpg"
+  },
+  {
+    "name": "Ansel's Abalone Noodle 250g",
+    "price": "$9.80",
+    "photo": "https://ansellim.github.io/minimart/abalonenoodle.jpg"
+  },
+  {
+    "name": "Fantastic Truffle Sauce 100g",
+    "price": "$25.00",
+    "photo": "https://ansellim.github.io/minimart/trufflesauce.jpg"
+  },
+  {
+    "name": "Ansel's Vegetable Oil 2 liters",
+    "price": "$10.50",
+    "photo": "https://ansellim.github.io/minimart/vegetableoil.png"
+  },
+  {
+    "name": "Ansel's 100% Natural Tomato Ketchup 350g",
+    "price": "$2.50",
+    "photo": "https://ansellim.github.io/minimart/tomatoketchup.jpg"
+  }
+]
