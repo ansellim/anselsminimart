@@ -1,100 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Directions</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Directions</title>
+    <!-- load in Google Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsOu2g25QpezRc_3DjQpRBHtq85bn3yik&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
 
-  <!-- load in Google Maps API -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsOu2g25QpezRc_3DjQpRBHtq85bn3yik&callback=initMap&libraries=&v=weekly"
-    defer></script>
+    <!-- Bootstrap, Jquery -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap, Jquery -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- For Progressive Web App - Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="images/icon-192x192.png" />
+    <meta name="theme-color" content="#f69435" />
 
-  <!-- For Progressive Web App - Manifest -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="images/icon-192x192.png">
-  <meta name="theme-color" content="#f69435" />
+    <!-- this is required - otherwise map doesn't show... -->
+    <style type="text/css">
+      #map {
+        min-height: 400px;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
 
-  <!-- this is required - otherwise map doesn't show... -->
-  <style type="text/css">
-    #map {
-      min-height: 400px;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+    <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
+    <script src="javascript/load_in_service_worker.js"></script>
 
-  <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
-  <script src="javascript/load_in_service_worker.js"></script>
+    <!--Load in maps.js, a javascript that contains the core code for displaying map & directions. -->
+    <script src="javascript/maps.js"></script>
+  </head>
 
-  <!--Load in maps.js, a javascript that contains the core code for displaying map & directions. -->
-  <script src="javascript/maps.js"></script>
-
-</head>
-
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Ansel's Minimart</a>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Ansel's Minimart</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="products.html">Browse Products</a></li>
+          <li><a href="shoppinglist.html">Create Shopping List</a></li>
+          <li><a href="directions.html">How To Get Here</a></li>
+          <li><a href="feedback_form.html">Feedback Form</a></li>
+        </ul>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="products.html">Browse Products</a></li>
-        <li><a href="shoppinglist.html">Create Shopping List</a></li>
-        <li><a href="directions.html">How To Get Here</a></li>
-        <li><a href="feedback_form.html">Feedback Form</a></li>
-      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>How to get here!</h1>
     </div>
-  </nav>
 
-  <div class="container">
-    <h1>How to get here!</h1>
-  </div>
+    <div class="container">
+      <h2>Address</h2>
+      <p>
+        We are located in T21 building at Singapore Polytechnic. Our address is:
+        500 Dover Road, Singapore 139651.
+      </p>
+    </div>
 
-  <div class="container">
-    <h2>Address</h2>
-    <p>
-      We are located in T21 building at Singapore Polytechnic. Our address is:
-      500 Dover Road, Singapore 139651.
-    </p>
-  </div>
+    <p hidden id="pos_lat"></p>
+    <p hidden id="pos_lng"></p>
 
-  <p hidden id="pos_lat"></p>
-  <p hidden id="pos_lng"></p>
+    <div class="container">
+      <h2>Let me show you how to get here!</h2>
+      <button id="btn">Click here to get directions</button>
+      <p id="directions_information"></p>
+    </div>
 
-  <div class="container">
-    <h2>Let me show you how to get here!</h2>
-    <button id="btn">Click here to get directions</button>
-    <p id="directions_information"></p>
-  </div>
+    <div class="container">
+      <div id="map" style="float: left; width: 100%; height: 100%"></div>
+      <div
+        id="directionsPanel"
+        style="float: right; width: 100%; height: 100%"
+      ></div>
+    </div>
 
-  <div class="container">
-    <div id="map" style="float:left;width:100%;height:100%"></div>
-    <div id="directionsPanel" style="float:right;width:100%;height:100%"></div>
-  </div>>
+    <div class="container">
+      <h2>Opening hours</h2>
+      <p>Monday-Friday 8am-5pm</p>
+      <p>Weekends 8am-12nn</p>
+    </div>
+  </body>
 
-  <div class="container">
-    <h2>Opening hours</h2>
-    <p>Monday-Friday 8am-5pm</p>
-    <p>Weekends 8am-12nn</p>
-  </div>
-</body>
-
-<footer class="bg-light text-center text-lg-start">
-  <br>
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-    © 2020 Copyright:
-    <a class="text-dark" href="http://ansellim.github.io">Ansel Lim</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-
+  <footer class="bg-light text-center text-lg-start">
+    <br />
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 Copyright:
+      <a class="text-dark" href="http://ansellim.github.io">Ansel Lim</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </html>
