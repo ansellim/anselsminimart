@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var xhttp = new XMLHttpRequest();
 
-  xhttp.open("GET", "products.json");
+  xhttp.open("GET", "JSON/products.json");
   xhttp.send();
 
   xhttp.onreadystatechange = function () {

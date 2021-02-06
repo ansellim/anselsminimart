@@ -4,72 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ansel's Minimart Home Page</title>
 
+    <!-- Load in bootstrap, JQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- <link rel="manifest" href="manifest.json" crossorigin="use-credentials"> -->
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icon-192x192.png">
-
+    <!-- For Progressive Web App - Manifest -->
+    <link rel="manifest" href="JSON/manifest.json">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
     <meta name="theme-color" content="#f69435" />
 
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(function (registration) {
-                    console.log('Registration successful, scope is:', registration.scope);
-                })
-                .catch(function (error) {
-                    console.log('Service worker registration failed, error:', error);
-                });
-        }
-    </script>
+    <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
+    <script src="javascript/load_in_service_worker.js"></script>
 </head>
 
 <body>
 
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Ansel's Minimart</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="products.html">Browse Products</a></li>
-                <li><a href="shoppinglist.html">Create Shopping List</a></li>
-                <li><a href="directions.html">How To Get Here</a></li>
-                <li><a href="feedback_form.html">Feedback Form</a></li>
-            </ul>
+        <!-- <div class="container-fluid"> -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Ansel's Minimart</a>
         </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="products.html">Browse Products</a></li>
+            <li><a href="shoppinglist.html">Create Shopping List</a></li>
+            <li><a href="directions.html">How To Get Here</a></li>
+            <li><a href="feedback_form.html">Feedback Form</a></li>
+        </ul>
+        <!-- </div> -->
     </nav>
 
     <div class="container">
         <div class="text-center">
             <h1>
-                <span class="text-primary">Welcome to Ansel's minimart</span>
-                <span>ABC</span>
-                <br>
-                <small>bringing the conveniences of grocery shopping to <mark>all polytechnic students</mark></small>
+                <div class="text-primary">Welcome to Ansel's minimart</div>
+                <small>bringing the conveniences of grocery shopping to <mark>all polytechnic
+                        students</mark></small>
             </h1>
         </div>
     </div>
-    <!-- 
-    <div class="container-fluid">
-        <div class="text-center">
-            <h3>What do you want to do today?</h3>
-        </div>
-        <div class="row content-center">
-            <div class="btn-group btn-group-justified">
-                <a href="#" class="btn btn-primary">products</a>
-                <a href="#" class="btn btn-info">take notes</a>
-                <a href="#" class="btn btn-success">directions</a>
-            </div>
-        </div>
-    </div> -->
 
     <div class="container">
         <div class="text-center">
@@ -79,16 +56,6 @@
                 items that you can choose from.</p>
         </div>
     </div>
-
-    <!-- <div class="row">
-        <div class="text-center">
-            <ul>
-                <li><a href="products.html">Product Listings</a></li>
-                <li><a href="map.html">Where Are We?</a></li>
-                <li><a href="notes.html">Take Notes</a></li>
-            </ul>
-        </div>
-    </div> -->
 
     <div class="container">
         <div class="well well-sm">
@@ -173,6 +140,7 @@
         <div class="text-center text-muted">
             <h2>About this website</h2>
             <p>This is a fake website.</p>
+            <p>You should not expect to buy anything from this Minimart.</p>
         </div>
         <div class="text-muted">
             <table class="table table-responsive table-hover">

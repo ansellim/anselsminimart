@@ -4,29 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Directions</title>
+  <title>Get Directions</title>
 
+  <!-- load in Google Maps API -->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsOu2g25QpezRc_3DjQpRBHtq85bn3yik&callback=initMap&libraries=&v=weekly"
     defer></script>
 
+  <!-- Bootstrap, Jquery -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
 
-  <link rel="apple-touch-icon" href="icon-192x192.png" />
+  <!-- PWA-related -->
+  <link rel="manifest" href="JSON/manifest.json" />
+  <link rel="apple-touch-icon" href="images/icon-192x192.png" />
   <meta name="theme-color" content="#f69435" />
 
-  <script>
-    window.onload = function () {
-      console.log("Testing window onload");
-    };
-    $(document).ready(function () {
-      console.log("Testing document ready fn");
-    })
-  </script>
-
+  <!-- this is required - otherwise map doesn't show... -->
   <style type="text/css">
     #map {
       min-height: 400px;
@@ -35,39 +30,8 @@
     }
   </style>
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("sw.js")
-        .then(function (registration) {
-          console.log(
-            "Registration successful, scope is:",
-            registration.scope
-          );
-        })
-        .catch(function (error) {
-          console.log("Service worker registration failed, error:", error);
-        });
-    }
-    console.log("TEST");
-  </script>
-
-
-  <script>
-    // function showDirections() {
-    //   console.log("testing show directions function");
-    // }
-    // document.getElementById("btn").addEventListener("click", function () {
-    //   console.log("123");
-    // })
-
-
-    // $(document).ready(function () {
-    //   $('#btn').on("click", function () {
-    //     console.log("abc");
-    //   })
-    // }); 
-  </script>
+  <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
+  <script src="javascript/load_in_service_worker.js"></script>
 
 </head>
 
@@ -88,7 +52,7 @@
   </nav>
 
   <div class="container">
-    <h1>How to get here! (Under Construction)</h1>
+    <h1>How to get here!</h1>
   </div>
 
   <div class="container">
@@ -98,7 +62,6 @@
       500 Dover Road, Singapore 139651.
     </p>
   </div>
-
 
 
   <p hidden id="pos_lat"></p>

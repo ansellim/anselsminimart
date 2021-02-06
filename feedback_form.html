@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
 
+    <!-- Bootstrap, Jquery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- <link rel="manifest" href="manifest.json" crossorigin="use-credentials"> -->
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icon-192x192.png">
-
+    <!-- PWA-related: -->
+    <link rel="manifest" href="JSON/manifest.json">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
     <meta name="theme-color" content="#f69435" />
 
+    <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
+    <script src="javascript/load_in_service_worker.js"></script>
 
-    <script>
+    <!-- to deprecate... -->
+    <!-- <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
                 .then(function (registration) {
@@ -27,7 +30,7 @@
                     console.log('Service worker registration failed, error:', error);
                 });
         }
-    </script>
+    </script> -->
 </head>
 
 <body>

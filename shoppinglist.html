@@ -6,26 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Take notes!</title>
 
+    <!-- bootstrap, jquery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
-    <link rel="apple-touch-icon" href="icon-192x192.png">
+
+    <!-- PWA-related -->
+    <link rel="manifest" href="JSON/manifest.json" crossorigin="use-credentials">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
     <meta name="theme-color" content="#f69435" />
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        }
-    </script>
-    <!-- <script>
-        function saveMessage() {
-            var title = document.getElementById('title');
-            var message = document.getElementById('message');
-            localStorage.setItem('title', title);
-            localStorage.setItem('message', message);
-        }
-    </script> -->
+
+    <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
+    <script src="javascript/load_in_service_worker.js"></script>
 
 </head>
 
@@ -50,6 +43,8 @@
         <h1>Create shopping list.</h1>
 
         <p>Create notes.</p>
+
+        <p>Take notes before coming to Ansel's Minimart!</p>
 
         <div id="form">
             <form id="inputForm">
@@ -116,7 +111,7 @@
         <ul id="notesdisplaylist"></ul> -->
     </div>
 
-    <script src="shoppinglist.js"></script>
+    <script src="javascript/shoppinglist.js"></script>
 
 </body>
 
