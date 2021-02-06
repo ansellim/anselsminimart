@@ -3,41 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Directions</title>
+    <title>Take notes!</title>
 
-    <!-- load in Google Maps API -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsOu2g25QpezRc_3DjQpRBHtq85bn3yik&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-
-    <!-- Bootstrap, Jquery -->
+    <!-- Bootstrap, jquery -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- For Progressive Web App - Manifest -->
+    <!-- PWA-related -->
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="images/icon-192x192.png" />
     <meta name="theme-color" content="#f69435" />
 
-    <!-- this is required - otherwise map doesn't show... -->
-    <style type="text/css">
-      #map {
-        min-height: 400px;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-
     <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
     <script src="javascript/load_in_service_worker.js"></script>
-
-    <!--Load in maps.js, a javascript that contains the core code for displaying map & directions. -->
-    <script src="javascript/maps.js"></script>
   </head>
 
   <body>
@@ -58,39 +44,32 @@
     </nav>
 
     <div class="container">
-      <h1>How to get here!</h1>
-    </div>
+      <h1>Shopping Cart</h1>
 
-    <div class="container">
-      <h2>Address</h2>
       <p>
-        We are located in T21 building at Singapore Polytechnic. Our address is:
-        500 Dover Road, Singapore 139651.
+        Here is your shopping cart which shows what you have added to the cart
+        and the quantity you have added.
       </p>
     </div>
 
-    <p hidden id="pos_lat"></p>
-    <p hidden id="pos_lng"></p>
-
     <div class="container">
-      <h2>Let me show you how to get here!</h2>
-      <button id="btn">Click here to get directions</button>
-      <p id="directions_information"></p>
+      <h3 id="nothing_in_cart">Nothing in Shopping Cart!</h3>
+      <h3 id="have_cart" style="visibility: hidden">
+        Your shopping cart has the following items:
+      </h3>
+      <table id="cart_display" class="table" style="visibility: hidden">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
-    <div class="container">
-      <div id="map" style="float: left; width: 100%; height: 100%"></div>
-      <div
-        id="directionsPanel"
-        style="float: right; width: 100%; height: 100%"
-      ></div>
-    </div>
-
-    <div class="container">
-      <h2>Opening hours</h2>
-      <p>Monday-Friday 8am-5pm</p>
-      <p>Weekends 8am-12nn</p>
-    </div>
+    <script src="javascript/cart.js"></script>
   </body>
 
   <footer class="bg-light text-center text-lg-start">
