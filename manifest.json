@@ -2,18 +2,28 @@
   "name": "Ansel's Minimart",
   "theme_color": "#f69435",
   "background_color": "#f69435",
-  "theme_color": "#f69435",
   "display": "standalone",
-  "scope": "/minimart/",
-  "start_url": "/minimart/",
+  "scope": "./",
+  "start_url": "./",
   "app_name": "Ansel's Minimart",
   "short_name": "Ansel Mart",
   "icons": [
     {
+      "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "images/icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
       "src": "images/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "images/icon-256x256.png",

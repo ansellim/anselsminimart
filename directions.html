@@ -33,6 +33,9 @@
   <!-- Load in service worker. Service worker file is in sw.js which I generated using Workbox tools. -->
   <script src="javascript/load_in_service_worker.js"></script>
 
+  <!--Load in maps.js, a javascript that contains the core code for displaying map & directions. -->
+  <script src="javascript/maps.js"></script>
+
 </head>
 
 <body>
@@ -63,115 +66,8 @@
     </p>
   </div>
 
-
   <p hidden id="pos_lat"></p>
   <p hidden id="pos_lng"></p>
-
-  <script>
-    let map;
-    let myLat;
-    let myLng;
-    const myLatLng = { lat: 1.3115957122081283, lng: 103.77520417009457 };
-
-    // function initMap() {
-
-    //   console.log("The init map function has been called");
-
-    //   map = new google.maps.Map(document.getElementById("map"), {
-    //     center: myLatLng,
-    //     zoom: 16,
-    //   });
-
-    //   if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(function (position) {
-    //       myLat = position.coords.latitude;
-    //       myLon = position.coords.longitude;
-    //       //console.log(myLat); //This shows me the latitude
-    //       Displaylat_lng(myLat, myLon);
-    //     });
-    //   };
-
-    //   function Displaylat_lng(lat, lng) {
-    //     console.log('Lat ==> ' + lat + ' lng ==> ' + lng);
-    //     $('#pos_lat').html(lat);
-    //     $('#pos_lng').html(lng)
-    //   };
-
-    // };
-
-
-    function initMap() {
-      var directionsService = new google.maps.DirectionsService();
-      var directionsRenderer = new google.maps.DirectionsRenderer();
-      var anselMinimart = new google.maps.LatLng(1.3115957122081283, 103.77520417009457);
-      var mapOptions = {
-        zoom: 16,
-        center: anselMinimart
-      }
-      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-      new google.maps.Marker({
-        position: myLatLng,
-        map,
-        title: "Ansel's Minimart",
-      });
-      directionsRenderer.setMap(map);
-      directionsRenderer.setPanel(document.getElementById('directionsPanel'));
-
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          myLat = position.coords.latitude;
-          myLon = position.coords.longitude;
-          //console.log(myLat); //This shows me the latitude
-          Displaylat_lng(myLat, myLon);
-        });
-      };
-
-      function Displaylat_lng(lat, lng) {
-        console.log('Lat ==> ' + lat + ' lng ==> ' + lng);
-        $('#pos_lat').html(lat);
-        $('#pos_lng').html(lng)
-      };
-
-
-      var originLatitude;
-      var originLongitude;
-
-
-      function calcRoute() {
-
-        var start = originLatitude + "," + originLongitude;
-        console.log(originLatitude);
-        console.log(originLongitude);
-        var end = "500 Dover Rd, Singapore"; // "1.3115957122081283,  103.77520417009457";
-        var request = {
-          origin: start,
-          destination: end,
-          travelMode: 'TRANSIT'
-        };
-        directionsService.route(request, function (response, status) {
-          if (status == 'OK') {
-            directionsRenderer.setDirections(response);
-          }
-        });
-      };
-
-      $("#btn").on("click", function () {
-        originLatitude = $("#pos_lat").html();
-        originLongitude = $("#pos_lng").html();
-        calcRoute();
-      });
-
-    };
-
-
-    // adapted from https://developers.google.com/maps/documentation/javascript/examples/directions-panel.
-
-
-
-  </script>
-  <!-- 
-  <div class="container"><br /></div> -->
 
   <div class="container">
     <h2>Let me show you how to get here!</h2>
@@ -180,40 +76,9 @@
   </div>
 
   <div class="container">
-    <!-- <div id="map"></div> -->
     <div id="map" style="float:left;width:100%;height:100%"></div>
     <div id="directionsPanel" style="float:right;width:100%;height:100%"></div>
-  </div>
-
-  <script>
-
-    // $("#btn").on("click", function () {
-    //   var originLatitude = $("#pos_lat").html();
-    //   var originLongitude = $("#pos_lng").html();
-    //   let my_url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + originLatitude + "," + originLongitude + "&destination=" + "Singapore+Polytechnic" + "&key=AIzaSyBsOu2g25QpezRc_3DjQpRBHtq85bn3yik";
-    //   console.log(my_url);
-
-    //   function printDirections() {
-    //     $.ajax({
-    //       url: my_url,
-    //       type: "GET",
-    //       dataType: 'jsonp',
-    //       cache: false,
-    //       success: function (response) {
-    //         alert(response);
-    //       }
-    //     });
-    //   };
-
-    //   printDirections();
-
-    // });
-
-
-
-  </script>
-
-
+  </div>>
 
   <div class="container">
     <h2>Opening hours</h2>
