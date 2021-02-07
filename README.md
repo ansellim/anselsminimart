@@ -1,11 +1,18 @@
 # hey there
 
-This is my website
+This is Ansel's submission for FWD & WMP modules for the Specialist Diploma in Full Stack Web Development.
 
-# Updated
+# what this website is about
 
-have added cart functionality
+the website content is obviously very boring, but the main point of the website is to showcase some web technologies, namely:
 
-# updated
+- AJAX
+- JQuery
+- localStorage / sessionStorage
+- form elements
+- Google Maps API
+- progressive web app (this website passes the Lighthouse audit)
 
-cleaning up assignment for submission.
+# the live website
+
+The website is LIVE at https://ansellim.github.io/anselsminimart/index.html
