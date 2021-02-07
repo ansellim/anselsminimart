@@ -1,7 +1,10 @@
 $(document).ready(function () {
   var xhttp = new XMLHttpRequest();
 
-  xhttp.open("GET", "https://ansellim.github.io/minimart/products.json");
+  xhttp.open(
+    "GET",
+    "https://raw.githubusercontent.com/ansellim/anselsminimart/main/JSON/products.json"
+  );
   xhttp.send();
 
   xhttp.onreadystatechange = function () {
