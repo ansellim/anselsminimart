@@ -2,6 +2,12 @@
 
 This is Ansel Lim's CA2 submission for FWD & WMP modules for the Specialist Diploma in Full Stack Web Development.
 
+# the live website
+
+The website is LIVE at https://ansellim.github.io/anselsminimart/index.html (hosted on github pages)
+
+And the codebase may be viewed at https://github.com/ansellim/anselsminimart.
+
 # what this website is about
 
 the theme of the assignment was food delivery or restaurant food. my previous assignment (CA1) was about a restaurant called Blue Bunny restaurant but i decided to start completely from scratch for this assignment so as to give myself more practice in basic html, css and other web technologies.
@@ -23,24 +29,26 @@ the website content is obviously very boring, but the main point of the website 
 - progressive web app (this website passes the Lighthouse audit)
   - i don't have push notifications
 
-# my design principle/aesthetic
-
-i prefer a very simple design with mostly text and i don't really like too many photos or colors - so, the website has no photos except for the photos of the products on the products page - i realize that this may result in penalties as "images" is part of the marking criteria for FWD - but i don't really like too many images as it clutters up the page.
-
 # what was not done
 
 i didn't have time to make multiple webpages to create "Details" subpages for each of the products in the Products page that would show more information about the products.
 
-# the live website
+# my design principle/aesthetic
 
-The website is LIVE at https://ansellim.github.io/anselsminimart/index.html (hosted on github pages)
+i prefer a very simple design with mostly text and i don't really like too many photos or colors - so, the website has no photos except for the photos of the products on the products page - i realize that this may result in penalties as "images" is part of the marking criteria for FWD - but i don't really like too many images as it clutters up the page.
 
-and the codebase may be viewed at https://github.com/ansellim/anselsminimart.
+# about comments
+
+i have put in high level comments to aid in the understanding of the javascript files, but for the HTML there are minimal comments because the document object model and the names/IDs/attributes of the tags should be self-explanatory
 
 # a comment about service worker
 
 i generated my service worker using workbox API's "wizard" function.
 
-# about comments
+# PWA lighthouse audit
 
-i have put in high level comments to aid in the understanding of the javascript files, but for the HTML there are minimal comments because the document object model and the names/IDs/attributes of the tags should be self-explanatory
+this website passes the PWA lighthouse audit!
+
+see the results of my audit here:
+
+![pwa audit](https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/PWA.png)
