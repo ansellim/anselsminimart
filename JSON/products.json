@@ -32,16 +32,16 @@
   {
     "name": "Ansel's Homegrown Grapes (500g)",
     "price": "$5.00",
-    "photo": "https://ansellim.github.io/minimart/trufflesauce.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/grape.png"
   },
   {
     "name": "Ansel's Overpriced Kiwi (600g)",
     "price": "$10.00",
-    "photo": "https://ansellim.github.io/minimart/vegetableoil.png"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/kiwi.png"
   },
   {
     "name": "Ansel's Overpriced Sweet Potato Chips (500g)",
     "price": "$20.00",
-    "photo": "https://ansellim.github.io/minimart/tomatoketchup.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/chips.jpg"
   }
 ]
