@@ -9,7 +9,10 @@ $(document).ready(function () {
 
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      console.log("AJAX call has been made");
+      console.log(
+        "AJAX call has been made to load product information onto the webpage. See products-ajax.js for more information. Also see the JSON file which is loaded via AJAX; this JSON file is located on my github but it's also available locally in the JSON subfolder."
+      );
+      console.log("Loaded products-ajax.js");
 
       var data = JSON.parse(this.responseText);
 

@@ -6,6 +6,7 @@ const myLatLng = { lat: 1.3115957122081283, lng: 103.77520417009457 };
 // adapted from https://developers.google.com/maps/documentation/javascript/examples/directions-panel.
 
 function initMap() {
+  console.log("The function initMap() in maps.js has been called");
   var directionsService = new google.maps.DirectionsService();
   var directionsRenderer = new google.maps.DirectionsRenderer();
   var anselMinimart = new google.maps.LatLng(

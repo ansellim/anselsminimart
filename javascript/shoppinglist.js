@@ -7,6 +7,9 @@ if ("serviceWorker" in navigator) {
 }
 */
 
+//This is a script that allows user to make shopping list / free-text notes with title & note content.
+//User cannot delete individual notes, but user can delete all notes by clicking on a button on the webpage.
+
 var myList = [];
 
 let count = Number(window.localStorage.getItem("count"));
@@ -17,6 +20,7 @@ if (!count) {
 }
 
 $(document).ready(function () {
+  console.log("Loaded shoppinglist.js");
   $("#inputForm").submit(function (event) {
     alert("Form was submitted");
     window.localStorage.setItem(

@@ -1,3 +1,5 @@
+//This is a script that helps the user to add products to the shopping cart.
+
 var all_add_cart_buttons;
 var product_number;
 var id_name;
@@ -7,13 +9,10 @@ var price_of_product_selected;
 var price_of_product_selected_numeric;
 
 $(document).ready(function () {
+  console.log("Loaded add_to_cart.js");
   all_add_cart_buttons = document.querySelectorAll(".add_to_cart_button");
   for (i = 0; i < all_add_cart_buttons.length; i++) {
-    //console.log(all_add_cart_buttons[i]);
-
     all_add_cart_buttons[i].addEventListener("click", function () {
-      //console.log(this.name);
-
       alert(
         "You have added an item to the cart. Check the 'Cart' page to view your updated cart."
       );
@@ -92,7 +91,7 @@ $(document).ready(function () {
     });
   }
 
-  function addToCart() {
-    console.log(this.name);
-  }
+  // function addToCart() {
+  //   console.log(this.name);
+  // }
 });

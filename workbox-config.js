@@ -1,7 +1,7 @@
 module.exports = {
-  "globDirectory": "updatedminimart/",
+  "globDirectory": "anselsminimart/",
   "globPatterns": [
-    "**/*.{css,html,js,json}"
+    "**/*.{html,css,jpg,png,ico,js,json,md}"
   ],
-  "swDest": "updatedminimart/sw.js"
+  "swDest": "anselsminimart/sw.js"
 };

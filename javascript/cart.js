@@ -1,8 +1,10 @@
+//This is a script that populates the cart page with the items in the cart.
+
 var my_cart_enumerate;
 var my_cart_price;
 
 $(document).ready(function () {
-  console.log("Loaded cart.js");
+  console.log("Loaded cart.js.");
 
   var products = JSON.parse(sessionStorage.getItem("products_in_my_cart"));
   var price = sessionStorage.getItem("total_price_of_my_cart");
