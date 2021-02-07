@@ -2,32 +2,32 @@
   {
     "name": "Ansel's House Brand Olive Oil 2 liters",
     "price": "$18.40",
-    "photo": "https://ansellim.github.io/minimart/oliveoil.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/oliveoil.jpg"
   },
   {
     "name": "SongHe AAA Thai Rice 5kg",
     "price": "$14.60",
-    "photo": "https://ansellim.github.io/minimart/thairice.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/thairice.jpg"
   },
   {
     "name": "Ansel's Abalone Noodle 250g",
     "price": "$9.80",
-    "photo": "https://ansellim.github.io/minimart/abalonenoodle.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/abalonenoodle.jpg"
   },
   {
     "name": "Fantastic Truffle Sauce 100g",
     "price": "$25.00",
-    "photo": "https://ansellim.github.io/minimart/trufflesauce.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/trufflesauce.jpg"
   },
   {
     "name": "Ansel's Vegetable Oil 2 liters",
     "price": "$10.50",
-    "photo": "https://ansellim.github.io/minimart/vegetableoil.png"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/vegetableoil.png"
   },
   {
     "name": "Ansel's 100% Natural Tomato Ketchup 350g",
     "price": "$2.50",
-    "photo": "https://ansellim.github.io/minimart/tomatoketchup.jpg"
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/tomatoketchup.jpg"
   },
   {
     "name": "Ansel's Homegrown Grapes (500g)",
@@ -43,5 +43,20 @@
     "name": "Ansel's Overpriced Sweet Potato Chips (500g)",
     "price": "$20.00",
     "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/chips.jpg"
+  },
+  {
+    "name": "Ansel's Extremely Overpriced Truffle Chips (300g)",
+    "price": "$30.50",
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/trufflechips.png"
+  },
+  {
+    "name": "Ansel's Milo Snack Bars (160g)",
+    "price": "$5.65",
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/milosnackbar.png"
+  },
+  {
+    "name": "Ansel's Overpriced Cheese Fries (500g)",
+    "price": "$10.95",
+    "photo": "https://raw.githubusercontent.com/ansellim/anselsminimart/main/images/cheesefries.jpg"
   }
 ]
