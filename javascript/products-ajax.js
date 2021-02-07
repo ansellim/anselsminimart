@@ -1,3 +1,6 @@
+// This is a script that makes AJAX call to populate the Products webpage with product information.
+// To make this script, i referenced online documentation about XMLHttpRequest() regarding the syntax.
+
 $(document).ready(function () {
   var xhttp = new XMLHttpRequest();
 
@@ -20,16 +23,21 @@ $(document).ready(function () {
 
       var all_card_texts = document.getElementsByClassName("card-text");
 
+      var all_card_images = $(".product-listing").find("img");
+
+      //loop through the card titles and texts and images and then populate with the information from the JSON object.
+
+      //card titles
       for (i = 0; i < all_card_titles.length; i++) {
         all_card_titles[i].innerHTML = data[i].name;
       }
 
+      //card texts
       for (i = 0; i < all_card_texts.length; i++) {
         all_card_texts[i].innerHTML = data[i].price;
       }
 
-      var all_card_images = $(".product-listing").find("img");
-
+      //card images
       for (i = 0; i < all_card_images.length; i++) {
         all_card_images[i].src = data[i].photo;
       }

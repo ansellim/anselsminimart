@@ -38,3 +38,7 @@ The website is LIVE at https://ansellim.github.io/anselsminimart/index.html (hos
 # a comment about service worker
 
 i generated my service worker using workbox API's "wizard" function.
+
+# about comments
+
+i have put in high level comments to aid in the understanding of the javascript files, but for the HTML there are minimal comments because the document object model and the names/IDs/attributes of the tags should be self-explanatory

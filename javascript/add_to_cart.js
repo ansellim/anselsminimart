@@ -10,12 +10,16 @@ var price_of_product_selected_numeric;
 
 $(document).ready(function () {
   console.log("Loaded add_to_cart.js");
+
+  //For each of the Add to Cart buttons, we run this code to allow for product information associated with each button to be stored in Storage when the user clicks on the button.
   all_add_cart_buttons = document.querySelectorAll(".add_to_cart_button");
   for (i = 0; i < all_add_cart_buttons.length; i++) {
     all_add_cart_buttons[i].addEventListener("click", function () {
       alert(
         "You have added an item to the cart. Check the 'Cart' page to view your updated cart."
       );
+
+      // Collect the information about product name and price and format it accordingly for manipulation later on in the code.
       product_number = this.name;
       id_name = "#" + "product" + product_number + "_name";
       id_price = "#" + "product" + product_number + "_price";
@@ -25,8 +29,12 @@ $(document).ready(function () {
         1,
         price_of_product_selected.length
       );
+
+      // For debugging:
       console.log("You selected: " + name_of_product_selected);
       console.log("Cost of selection is: " + price_of_product_selected);
+
+      // Store product names in a sessionStorage key/value pair.
 
       if (sessionStorage.getItem("products_in_my_cart") === null) {
         sessionStorage.setItem(
@@ -48,6 +56,8 @@ $(document).ready(function () {
         );
       }
 
+      // Store product prices in a sessionStorage key/value pair.
+
       if (sessionStorage.getItem("prices_in_my_cart") === null) {
         sessionStorage.setItem(
           "prices_in_my_cart",
@@ -67,6 +77,8 @@ $(document).ready(function () {
         );
         console.log("Updated list of prices");
       }
+
+      // Store (and update) a running total of the price.
 
       if (sessionStorage.getItem("total_price_of_my_cart") === null) {
         sessionStorage.setItem(
@@ -90,8 +102,4 @@ $(document).ready(function () {
       }
     });
   }
-
-  // function addToCart() {
-  //   console.log(this.name);
-  // }
 });

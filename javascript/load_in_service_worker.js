@@ -1,3 +1,5 @@
+// A script that loads in service worker from the sw.js file.
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("sw.js")

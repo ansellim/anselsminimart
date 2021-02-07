@@ -1,14 +1,7 @@
-/* Adapted from tharun shiv's code at https://github.com/tharunShiv/stick-it-notes*/
-
-/*
-if ("serviceWorker" in navigator) {
-  // register service worker
-  navigator.serviceWorker.register("service-worker.js");
-}
-*/
-
 //This is a script that allows user to make shopping list / free-text notes with title & note content.
 //User cannot delete individual notes, but user can delete all notes by clicking on a button on the webpage.
+
+/* Acknowledgement: I adapted the code from tharun shiv's code at https://github.com/tharunShiv/stick-it-notes */
 
 var myList = [];
 
@@ -21,6 +14,8 @@ if (!count) {
 
 $(document).ready(function () {
   console.log("Loaded shoppinglist.js");
+
+  //When the user clicks on button to store note, the information in text fields is pulled into variables and then stored in Storage, and we keep track of # of notes that we have.
   $("#inputForm").submit(function (event) {
     alert("Form was submitted");
     window.localStorage.setItem(
@@ -34,6 +29,7 @@ $(document).ready(function () {
     window.localStorage.setItem(current_count, JSON.stringify(input_array));
   });
 
+  // Change visibility of certain HTML elements depending on whether there are notes in Storage.
   if (parseInt(localStorage.getItem("count")) > 0) {
     $("#no-notes").css("visibility", "hidden");
     $("#have-notes").css("visibility", "visible");
@@ -44,6 +40,7 @@ $(document).ready(function () {
     );
   }
 
+  // Populate the table with the information in the Storage.
   for (var i = 0; i < localStorage.length; i++) {
     if (localStorage.key(i) != "count") {
       var mynote = localStorage.getItem(localStorage.key(i));
@@ -58,6 +55,7 @@ $(document).ready(function () {
     }
   }
 
+  //If the user clicks on button to delete all notes, then reove the notes from the Storage and also clear the table by usage of changing visibility attribute in CSS.
   $("#delete_all_notes_button").click(function () {
     console.log("Delete all notes button was clicked");
     var number_of_notes = parseInt(localStorage.getItem("count"));
