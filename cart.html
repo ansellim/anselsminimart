@@ -35,10 +35,10 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="products.html">Browse Products</a></li>
-          <li><a href="shoppinglist.html">Create Shopping List</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="shoppinglist.html">Create Shopping List/Notes</a></li>
           <li><a href="directions.html">How To Get Here</a></li>
           <li><a href="feedback_form.html">Feedback Form</a></li>
-          <li><a href="cart.html">Cart</a></li>
         </ul>
       </div>
     </nav>
@@ -71,6 +71,10 @@
           To get started, go to the Products page and add some items to your
           cart.
         </p>
+        <p>
+          When your cart has some items, we will show you a form which you can
+          fill in if you want home delivery.
+        </p>
       </div>
       <h3 id="have_cart" style="visibility: hidden">
         Your shopping cart has the following items:
@@ -85,6 +89,60 @@
         </thead>
         <tbody></tbody>
       </table>
+    </div>
+
+    <div
+      class="container"
+      id="delivery_form_container"
+      style="visibility: hidden"
+    >
+      <h1>Home Delivery</h1>
+      <h2>Key in your details if you want home/office delivery</h2>
+      <h3>Delivery is free if your total purchase is $60 or more.</h3>
+      <br />
+
+      <form action="thankyou.html" id="delivery_form">
+        <fieldset class="form-group">
+          <legend>Personal Details</legend>
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="form-control" required />
+          </div>
+          <br />
+          <div>
+            <label for="phone-number">Phone number:</label>
+            <input type="tel" id="phone-number" class="form-control" required />
+          </div>
+          <br />
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required />
+            <small class="text-small text-muted"
+              >We will send a receipt to your email.</small
+            >
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Delivery details</legend>
+          <div>
+            <label for="address">Delivery address:</label>
+            <textarea
+              id="address"
+              rows="3"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="date">Preferred date:</label>
+            <input type="date" id="date" class="form-control" />
+          </div>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+      </form>
     </div>
 
     <script src="javascript/cart.js"></script>

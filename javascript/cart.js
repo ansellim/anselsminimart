@@ -32,6 +32,7 @@ $(document).ready(function () {
   $("#cart_display").css("visibility", "visible");
   $("#nothing_in_cart").css("visibility", "hidden");
   $("#have_cart").css("visibility", "visible");
+  $("#delivery_form_container").css("visibility", "visible");
 
   var list_of_unique_products = Object.keys(my_cart_enumerate);
 
