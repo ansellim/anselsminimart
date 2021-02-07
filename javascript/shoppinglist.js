@@ -34,6 +34,10 @@ $(document).ready(function () {
     $("#no-notes").css("visibility", "hidden");
     $("#have-notes").css("visibility", "visible");
     $("#notesDisplay").css("visibility", "visible");
+    $("#delete_all_notes_button_enclosing_container").css(
+      "visibility",
+      "visible"
+    );
   }
 
   for (var i = 0; i < localStorage.length; i++) {
@@ -49,4 +53,22 @@ $(document).ready(function () {
       $("#notesdisplaylist").append("<li>" + noteBody + "</li>");
     }
   }
+
+  $("#delete_all_notes_button").click(function () {
+    console.log("Delete all notes button was clicked");
+    var number_of_notes = parseInt(localStorage.getItem("count"));
+    for (i = 1; i <= number_of_notes; i++) {
+      localStorage.removeItem(String(i));
+    }
+
+    localStorage.setItem("count", "0");
+
+    $("#notesDisplay").html(
+      "<thead><tr><th>Title</th><th>Note</th></tr></thead><tbody></tbody>"
+    );
+
+    $("#no-notes").css("visibility", "visible");
+    $("#have-notes").css("visibility", "hidden");
+    $("#notesDisplay").css("visibility", "hidden");
+  });
 });
