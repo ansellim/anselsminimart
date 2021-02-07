@@ -35,6 +35,8 @@ i didn't have time to make multiple webpages to create "Details" subpages for ea
 
 The website is LIVE at https://ansellim.github.io/anselsminimart/index.html (hosted on github pages)
 
+and the codebase may be viewed at https://github.com/ansellim/anselsminimart.
+
 # a comment about service worker
 
 i generated my service worker using workbox API's "wizard" function.
