@@ -70,5 +70,10 @@ $(document).ready(function () {
     $("#no-notes").css("visibility", "visible");
     $("#have-notes").css("visibility", "hidden");
     $("#notesDisplay").css("visibility", "hidden");
+
+    $("#delete_all_notes_button_enclosing_container").css(
+      "visibility",
+      "hidden"
+    );
   });
 });
